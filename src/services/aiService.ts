@@ -85,9 +85,16 @@ Focus on providing actionable business intelligence and clear insights that help
   }
 
   private async callOpenAI(prompt: string, provider: AIProvider): Promise<AIResponse> {
-    const url = this.useCorsProxy 
-      ? 'https://cors-anywhere.herokuapp.com/https://api.openai.com/v1/chat/completions'
-      : 'https://api.openai.com/v1/chat/completions';
+    // For production (GitHub Pages), don't use CORS proxy
+    // For localhost, use CORS proxy if enabled
+    const isProduction = window.location.hostname === 'abdul-mangrio.github.io';
+    const baseUrl = 'https://api.openai.com/v1/chat/completions';
+    
+    let url = baseUrl;
+    if (!isProduction && this.useCorsProxy) {
+      // Only use CORS proxy for localhost development
+      url = 'https://cors-anywhere.herokuapp.com/' + baseUrl;
+    }
 
     const response = await axios.post(
       url,
@@ -119,25 +126,30 @@ Focus on providing actionable business intelligence and clear insights that help
   }
 
   private async callClaude(prompt: string, provider: AIProvider): Promise<AIResponse> {
-    // Try different CORS proxies if one fails
-    const corsProxies = [
-      'https://cors-anywhere.herokuapp.com/',
-      'https://api.allorigins.win/raw?url=',
-      'https://cors.bridged.cc/',
-      'https://thingproxy.freeboard.io/fetch/'
-    ];
-    
+    // For production (GitHub Pages), don't use CORS proxy
+    // For localhost, use CORS proxy if enabled
+    const isProduction = window.location.hostname === 'abdul-mangrio.github.io';
     const baseUrl = 'https://api.anthropic.com/v1/messages';
-    const url = this.useCorsProxy 
-      ? `${corsProxies[0]}${baseUrl}`
-      : baseUrl;
+    
+    let url = baseUrl;
+    if (!isProduction && this.useCorsProxy) {
+      // Only use CORS proxy for localhost development
+      const corsProxies = [
+        'https://cors-anywhere.herokuapp.com/',
+        'https://api.allorigins.win/raw?url=',
+        'https://cors.bridged.cc/',
+        'https://thingproxy.freeboard.io/fetch/'
+      ];
+      url = `${corsProxies[0]}${baseUrl}`;
+    }
 
     try {
       console.log('Calling Claude API with:', {
         url,
         model: provider.model,
         apiKeyLength: provider.apiKey ? provider.apiKey.length : 0,
-        useCorsProxy: this.useCorsProxy
+        useCorsProxy: this.useCorsProxy,
+        isProduction: window.location.hostname === 'abdul-mangrio.github.io'
       });
 
       const response = await axios.post(
@@ -175,10 +187,16 @@ Focus on providing actionable business intelligence and clear insights that help
   }
 
   private async callGemini(prompt: string, provider: AIProvider): Promise<AIResponse> {
+    // For production (GitHub Pages), don't use CORS proxy
+    // For localhost, use CORS proxy if enabled
+    const isProduction = window.location.hostname === 'abdul-mangrio.github.io';
     const baseUrl = `https://generativelanguage.googleapis.com/v1beta/models/${provider.model}:generateContent?key=${provider.apiKey}`;
-    const url = this.useCorsProxy 
-      ? `https://cors-anywhere.herokuapp.com/${baseUrl}`
-      : baseUrl;
+    
+    let url = baseUrl;
+    if (!isProduction && this.useCorsProxy) {
+      // Only use CORS proxy for localhost development
+      url = `https://cors-anywhere.herokuapp.com/${baseUrl}`;
+    }
 
     const response = await axios.post(
       url,
@@ -209,10 +227,16 @@ Focus on providing actionable business intelligence and clear insights that help
   }
 
   private async callAzureOpenAI(prompt: string, provider: AIProvider): Promise<AIResponse> {
+    // For production (GitHub Pages), don't use CORS proxy
+    // For localhost, use CORS proxy if enabled
+    const isProduction = window.location.hostname === 'abdul-mangrio.github.io';
     const baseUrl = `${provider.apiKey}/openai/deployments/${provider.model}/chat/completions?api-version=2023-05-15`;
-    const url = this.useCorsProxy 
-      ? `https://cors-anywhere.herokuapp.com/${baseUrl}`
-      : baseUrl;
+    
+    let url = baseUrl;
+    if (!isProduction && this.useCorsProxy) {
+      // Only use CORS proxy for localhost development
+      url = `https://cors-anywhere.herokuapp.com/${baseUrl}`;
+    }
 
     const response = await axios.post(
       url,
