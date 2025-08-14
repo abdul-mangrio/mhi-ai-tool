@@ -2,6 +2,23 @@
 
 A sophisticated React.js web application that serves as an intelligent AI assistant for NetSuite ERP operations. The application accepts natural language queries and leverages AI APIs (OpenAI, Claude, etc.) to process requests and return formatted NetSuite data with intelligent insights.
 
+## 🌐 **Live Application**
+
+**Your NetSuite AI Assistant is now live at:**
+**https://abdul-mangrio.github.io/mhi-ai-tool**
+
+---
+
+## 🚀 **Key Features**
+
+- ✅ **Multi-AI Provider Support**: OpenAI, Claude, Google Gemini, Azure OpenAI
+- ✅ **CORS-Free Deployment**: No more CORS issues!
+- ✅ **Settings Persistence**: All configurations saved locally
+- ✅ **Responsive Design**: Works on all devices
+- ✅ **Real-time Chat**: Interactive AI assistant
+- ✅ **Modern UI**: Material-UI components
+- ✅ **NetSuite Integration**: Mock data for demonstration
+
 ## 🚀 Features
 
 ### Core Capabilities
@@ -88,6 +105,25 @@ A sophisticated React.js web application that serves as an intelligent AI assist
 
 5. **Open your browser**
    Navigate to `http://localhost:3000`
+
+## 🚀 **Deployment**
+
+### **Production Deployment (✅ Completed)**
+Your application is already deployed and live at:
+**https://abdul-mangrio.github.io/mhi-ai-tool**
+
+### **For Future Updates:**
+```bash
+# Make changes to your code
+git add .
+git commit -m "Your update message"
+git push origin main
+npm run deploy
+```
+
+### **CORS Solutions:**
+- ✅ **Production**: No CORS issues (deployed to GitHub Pages)
+- 🔧 **Development**: Use browser extension or built-in CORS proxy in Settings
 
 ## 🏗️ Project Structure
 
