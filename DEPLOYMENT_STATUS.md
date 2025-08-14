@@ -126,3 +126,26 @@
 
 **Last Updated**: January 2025
 **Status**: 🟢 **OPERATIONAL**
+
+---
+
+## 🚀 **Latest Deployment (January 2025)**
+
+### **Changes Deployed:**
+- ✅ **CORS Proxy Improvements**: Added multiple CORS proxy options for better reliability
+- ✅ **Enhanced Error Handling**: Improved Claude API error logging and debugging
+- ✅ **Settings Persistence**: Fixed CORS proxy setting persistence across sessions
+- ✅ **API Key Debugging**: Added comprehensive API key status logging
+- ✅ **Deployment Script**: Enhanced deployment process with automatic homepage management
+
+### **Technical Improvements:**
+- Multiple CORS proxy fallbacks for better reliability
+- Enhanced error messages with detailed API response information
+- Improved settings loading and persistence
+- Better debugging capabilities for troubleshooting
+
+### **Deployment Details:**
+- **Build Size**: 281.58 kB (optimized)
+- **Deployment Time**: Successful
+- **GitHub Pages**: Updated and live
+- **Local Development**: Package.json restored for development

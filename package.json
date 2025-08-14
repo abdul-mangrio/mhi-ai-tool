@@ -2,7 +2,6 @@
   "name": "netsuite-ai-assistant",
   "version": "1.0.0",
   "description": "Intelligent AI Assistant for NetSuite ERP operations",
-
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.1",
