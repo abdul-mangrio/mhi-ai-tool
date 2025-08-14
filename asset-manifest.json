@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/mhi-ai-tool/static/js/main.eb8aeac2.js",
+    "index.html": "/mhi-ai-tool/index.html",
+    "main.eb8aeac2.js.map": "/mhi-ai-tool/static/js/main.eb8aeac2.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.eb8aeac2.js"
+  ]
+}
