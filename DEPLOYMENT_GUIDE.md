@@ -130,8 +130,8 @@ Your application is now deployed and CORS-free! However, here are solutions for 
    - Only for development (not needed in production)
 
 ### 🎯 **Recommended Approach:**
-- **Production**: Use the deployed app at https://abdul-mangrio.github.io/mhi-ai-tool (CORS-free)
-- **Development**: Use browser extension or built-in CORS proxy
+- **Production**: ✅ **Use the deployed app at https://abdul-mangrio.github.io/mhi-ai-tool (CORS-free) - RECOMMENDED**
+- **Development**: Use browser extension or built-in CORS proxy for local testing only
 
 ---
 

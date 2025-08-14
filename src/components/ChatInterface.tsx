@@ -244,22 +244,26 @@ const ChatInterface: React.FC = () => {
             size="small"
           />
           <Tooltip title={isListening ? 'Stop Recording' : 'Voice Input'}>
-            <IconButton
-              onClick={toggleVoiceInput}
-              color={isListening ? 'error' : 'primary'}
-              disabled={!('webkitSpeechRecognition' in window)}
-            >
-              {isListening ? <MicOffIcon /> : <MicIcon />}
-            </IconButton>
+            <span>
+              <IconButton
+                onClick={toggleVoiceInput}
+                color={isListening ? 'error' : 'primary'}
+                disabled={!('webkitSpeechRecognition' in window)}
+              >
+                {isListening ? <MicOffIcon /> : <MicIcon />}
+              </IconButton>
+            </span>
           </Tooltip>
           <Tooltip title="Send Message">
-            <IconButton
-              onClick={handleSendMessage}
-              disabled={!inputValue.trim()}
-              color="primary"
-            >
-              <SendIcon />
-            </IconButton>
+            <span>
+              <IconButton
+                onClick={handleSendMessage}
+                disabled={!inputValue.trim()}
+                color="primary"
+              >
+                <SendIcon />
+              </IconButton>
+            </span>
           </Tooltip>
         </Box>
         

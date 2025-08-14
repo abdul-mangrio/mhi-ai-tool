@@ -113,6 +113,15 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
           }
         }
 
+        // Debug: Log the API keys (without exposing them)
+        console.log('API Keys Status:', {
+          openai: savedApiKeys.openai ? `Length: ${savedApiKeys.openai.length}` : 'Not set',
+          claude: savedApiKeys.claude ? `Length: ${savedApiKeys.claude.length}` : 'Not set',
+          gemini: savedApiKeys.gemini ? `Length: ${savedApiKeys.gemini.length}` : 'Not set',
+          azure: savedApiKeys.azure ? `Length: ${savedApiKeys.azure.length}` : 'Not set',
+          activeProvider: savedActiveProvider
+        });
+
         // Create providers based on saved settings
         const mockProviders: AIProvider[] = [
           {
@@ -226,6 +235,12 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
             assistant.setActiveAIProvider(savedActiveProvider === 'openai' ? 'openai-1' : 
                                        savedActiveProvider === 'claude' ? 'claude-1' : 
                                        savedActiveProvider === 'gemini' ? 'gemini-1' : 'azure-1');
+            
+            // Apply CORS proxy setting if saved
+            if (settings.useCorsProxy !== undefined) {
+              assistant.setUseCorsProxy(settings.useCorsProxy);
+              console.log('CORS Proxy setting applied:', settings.useCorsProxy);
+            }
           } catch (error) {
             console.error('Error applying saved settings:', error);
           }

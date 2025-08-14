@@ -92,16 +92,36 @@ const API_BASE_URL = process.env.NODE_ENV === 'production'
 
 ## ✅ **Recommended Approach:**
 
-1. **For Development**: Use browser extension (Option 2) or built-in CORS proxy
-2. **For Production**: ✅ **Already deployed to GitHub Pages (Option 1)**
-3. **For Advanced**: Consider Netlify/Vercel (Option 5) if needed
+1. **For Development**: Use browser extension (Option 2) - **Development Only**
+2. **For Production**: ✅ **GitHub Pages Deployment (Option 1) - RECOMMENDED**
+3. **For Advanced**: Consider Netlify/Vercel (Option 5) for better features
 
 ## 🎯 **Current Status:**
 
-- ✅ **Production**: Live at https://abdul-mangrio.github.io/mhi-ai-tool (CORS-free)
-- ✅ **Development**: Use browser extension or CORS proxy for localhost:3000
-- ✅ **All CORS issues resolved!**
+- ✅ **Production**: Live at https://abdul-mangrio.github.io/mhi-ai-tool
+- ✅ **CORS Extension**: Installed for development testing
+- ⚠️ **Note**: Browser extension is for development only, not production
+
+## 🚀 **Production Solution (Recommended):**
+
+**GitHub Pages Deployment** is the recommended approach because:
+- ✅ **No CORS issues** (served from different origin)
+- ✅ **Free hosting** with automatic HTTPS
+- ✅ **Production ready** and scalable
+- ✅ **No browser extensions needed** for end users
+
+## 🔧 **Development Testing:**
+
+1. **For Local Development**:
+   - Use CORS browser extension (already installed)
+   - Test on localhost:3000
+   - Extension is for development only
+
+2. **For Production Testing**:
+   - Use the deployed app: https://abdul-mangrio.github.io/mhi-ai-tool
+   - No extensions needed
+   - Works for all users
 
 ## Quick Fix for Local Development:
 
-Install a CORS browser extension and enable it for localhost:3000
+✅ **CORS browser extension installed for development testing only**

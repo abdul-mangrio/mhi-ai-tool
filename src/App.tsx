@@ -82,7 +82,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <AppProvider>
-          <Router>
+          <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
             <Box sx={{ display: 'flex', height: '100vh', overflow: 'hidden' }}>
               <Navigation />
               <Box component="main" sx={{ flexGrow: 1, p: 3, overflow: 'hidden' }}>

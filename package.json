@@ -2,7 +2,7 @@
   "name": "netsuite-ai-assistant",
   "version": "1.0.0",
   "description": "Intelligent AI Assistant for NetSuite ERP operations",
-  "homepage": "https://abdul-mangrio.github.io/mhi-ai-tool",
+
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.1",
@@ -31,8 +31,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "node deploy.js"
   },
   "eslintConfig": {
     "extends": [

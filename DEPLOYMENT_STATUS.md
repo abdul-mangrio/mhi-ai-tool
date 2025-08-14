@@ -26,9 +26,10 @@
 - [x] GitHub Pages deployment completed
 
 ### **CORS Resolution**
-- [x] CORS issues resolved through GitHub Pages deployment
+- [x] CORS issues resolved through GitHub Pages deployment (Recommended)
 - [x] Built-in CORS proxy option available for development
-- [x] Browser extension solutions documented
+- [x] Browser extension solutions documented for development only
+- [x] ✅ **CORS browser extension installed for development testing**
 
 ### **Features Implemented**
 - [x] Multi-AI provider support (OpenAI, Claude, Gemini, Azure)
@@ -96,7 +97,7 @@
 ## 🔍 **Troubleshooting**
 
 ### **Common Issues**
-1. **CORS Errors**: ✅ Resolved in production
+1. **CORS Errors**: ✅ Resolved with GitHub Pages deployment (Recommended)
 2. **Settings Not Saving**: Check localStorage permissions
 3. **AI Provider Not Working**: Verify API keys in Settings
 4. **Build Failures**: Check TypeScript errors
